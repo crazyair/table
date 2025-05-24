@@ -14,6 +14,7 @@ const Demo = () => {
       fixed: 'left',
       onCell: (_, index) => {
         const props: React.TdHTMLAttributes<HTMLTableCellElement> = {};
+        if (index === 0) props.rowSpan = expandedRowKeys.includes('a') ? 2 : 1;
         if (index === 1) props.rowSpan = expandedRowKeys.includes('b') ? 3 : 2;
         if (index === 2) props.rowSpan = 0;
         return props;
